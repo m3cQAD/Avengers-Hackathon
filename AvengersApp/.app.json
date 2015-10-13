@@ -33,6 +33,15 @@
       "source": "everlive",
       "everliveKey": "H2h9QWfda4zxYVEt",
       "offlineStorage": true
+    },
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "avengersAppBackend",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "I19 Avengers Team / AvengersApp Backend",
+      "source": "everlive",
+      "everliveKey": "H2h9QWfda4zxYVEt",
+      "offlineStorage": true
     }
   ],
   "name": "kendoUiMobileApp",
