@@ -67,8 +67,8 @@ app.homeView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.Likes) {
-                    itemModel.Likes = String.fromCharCode(160);
+                if (!itemModel.Picture) {
+                    itemModel.Picture = String.fromCharCode(160);
                 }
                 homeViewModel.set('currentItem', itemModel);
             },

@@ -12,9 +12,9 @@
           "collection": "Activities",
           "headerField": "Text",
           "masterDetails": true,
-          "detailHeaderField": "Likes",
-          "detailSubHeaderField": "Likes",
-          "detailDescriptionField": "Likes",
+          "detailHeaderField": "Picture",
+          "detailSubHeaderField": "Text",
+          "detailDescriptionField": "Text",
           "pullToRefresh": true,
           "endlessScroll": true
         }
