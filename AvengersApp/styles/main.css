@@ -34,7 +34,7 @@
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
     color: #fff;
-    background-color: #10c4b2;
+    background-color: #428bca;
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
@@ -124,7 +124,7 @@
 }
 
 #kendoUiMobileApp #navigation-container .active {
-    background: #10c4b2;
+    background: #428bca;
     color: #fff;
 }
 
