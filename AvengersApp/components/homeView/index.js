@@ -53,6 +53,7 @@ app.homeView = kendo.observable({
                     }
                 }
             },
+            serverFiltering: true,
             serverSorting: true,
             serverPaging: true,
             pageSize: 50
@@ -67,8 +68,8 @@ app.homeView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.usrl_product) {
-                    itemModel.usrl_product = String.fromCharCode(160);
+                if (!itemModel.usrl_active) {
+                    itemModel.usrl_active = String.fromCharCode(160);
                 }
                 homeViewModel.set('currentItem', itemModel);
             },
