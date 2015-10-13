@@ -8,13 +8,13 @@
         {
           "type": "kendo-ui-mobile:list",
           "name": "homeViewModel",
-          "dataProvider": "defaultProvider",
-          "collection": "Activities",
-          "headerField": "Text",
+          "dataProvider": "avengersAppBackend",
+          "collection": "Licenses",
+          "headerField": "usrl_product",
           "masterDetails": true,
-          "detailHeaderField": "Picture",
-          "detailSubHeaderField": "Text",
-          "detailDescriptionField": "Text",
+          "detailHeaderField": "usrl_product",
+          "detailSubHeaderField": "usrl_active",
+          "detailDescriptionField": "usrl_active",
           "pullToRefresh": true,
           "endlessScroll": true
         }
