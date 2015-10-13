@@ -8,7 +8,7 @@ app.homeView = kendo.observable({
 // START_CUSTOM_CODE_homeView
 // END_CUSTOM_CODE_homeView
 (function(parent) {
-    var dataProvider = app.data.defaultProvider,
+    var dataProvider = app.data.avengersAppBackend,
         flattenLocationProperties = function(dataItem) {
             var propName, propValue,
                 isLocation = function(value) {
@@ -31,7 +31,7 @@ app.homeView = kendo.observable({
         dataSourceOptions = {
             type: 'everlive',
             transport: {
-                typeName: 'Activities',
+                typeName: 'Licenses',
                 dataProvider: dataProvider
             },
 
@@ -46,8 +46,8 @@ app.homeView = kendo.observable({
             schema: {
                 model: {
                     fields: {
-                        'Text': {
-                            field: 'Text',
+                        'usrl_product': {
+                            field: 'usrl_product',
                             defaultValue: ''
                         },
                     }
@@ -67,8 +67,8 @@ app.homeView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.Picture) {
-                    itemModel.Picture = String.fromCharCode(160);
+                if (!itemModel.usrl_product) {
+                    itemModel.usrl_product = String.fromCharCode(160);
                 }
                 homeViewModel.set('currentItem', itemModel);
             },
