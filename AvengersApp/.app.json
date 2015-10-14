@@ -13,9 +13,8 @@
           "headerField": "usrl_product",
           "filterField": "usrl_product",
           "masterDetails": true,
-          "detailHeaderField": "usrl_active",
-          "detailSubHeaderField": "usrl_active",
-          "detailDescriptionField": "usrl_active",
+          "detailHeaderField": "usrl_product",
+          "detailDescriptionField": "usrl_description",
           "pullToRefresh": true,
           "endlessScroll": true
         }

@@ -67,13 +67,17 @@ app.homeView = kendo.observable({
             detailsShow: function(e) {
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
-                    itemModel = dataSource.getByUid(item);
-                if (!itemModel.usrl_active) {
-                 //   itemModel.usrl_active = String.fromCharCode(160);
-                }
+                    itemModel = dataSource.getByUid(item),
+                    test;
+               // if (!itemModel.usrl_product) {
+                    //itemModel.usrl_product = String.fromCharCode(160);
+               // }
+                test = itemModel.usrl_product;
                 homeViewModel.set('currentItem', itemModel);
+                homeViewModel.set('name', test)
             },
-            currentItem: null
+            currentItem: null,
+            name: null
         });
 
     parent.set('homeViewModel', homeViewModel);
