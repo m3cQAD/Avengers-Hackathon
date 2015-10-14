@@ -7,16 +7,29 @@
     <!-- START_CUSTOM_CODE_homeViewModel -->
     <!-- END_CUSTOM_CODE_homeViewModel -->
     <script type="text/x-kendo-template" id="homeViewModelTemplate">
-    	# if(data['usrl_active']){ #
+    <!-- Select color for item depending on days left for license -->
+    	# var color = 'no-active-item';
+        if(data['usrl_active']){
+        	var date1 = new Date();
+        	var date2 = data['usrl_deactive_date'];
+        	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+			var daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+            if(daysLeft >= 30){
+            	color = 'greenItem';
+            }else{
+            	if(daysLeft >= 15){
+                	color = 'orangeItem';
+                }else{
+                	color = 'redItem';
+                }
+            }
+        }
+        #
+
         <div class="image-with-text">
-            <h3>#: data['usrl_product'] #</h3>
+            <h5 class= #: color #>#: data['usrl_product'] #</h5>
+            <h3>#: data['usrl_description'] #</h3>
 
         </div>
-   		# }else{ #
-        <div class="no-active-product">
-            <h3>#: data['usrl_product'] #</h3>
-
-        </div>
-        # } #
     </script>
 </div>

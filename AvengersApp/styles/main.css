@@ -3,10 +3,6 @@
     margin-right: 15px;
 }
 
-#kendoUiMobileApp .no-active-product {
-	background: red;
-}
-
 #kendoUiMobileApp .block {
     display: block;
     margin: 1em;
@@ -111,7 +107,21 @@
 
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
+#kendoUiMobileApp .no-active-item {
+	color: grey;
+}
 
+#kendoUiMobileApp .greenItem {
+	color: green;
+}
+
+#kendoUiMobileApp .orangeItem {
+	color: orange;
+}
+
+#kendoUiMobileApp .redItem {
+	color: red;
+}
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */
 
