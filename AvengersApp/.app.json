@@ -31,7 +31,7 @@
         {
           "type": "kendo-ui-mobile:authentication",
           "name": "authenticationViewModel",
-          "dataProvider": "defaultProvider",
+          "dataProvider": "avengersAppBackend",
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
