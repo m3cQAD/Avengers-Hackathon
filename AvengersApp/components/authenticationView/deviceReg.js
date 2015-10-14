@@ -1,3 +1,10 @@
+var bsApiKey = 'AIzaSyDe7kE78IkH14GGI4Vw6tEk1Bd-EK44thQ';
+
+// This is the scheme (http or https) to use for accessing the Telerik Backend Services REST API.
+var bsScheme = 'http';
+
+// This is your Google Cloud Console API project number. It is required by Google in order to enable push notifications for your Android. You do not need it for iOS.
+var googleApiProjectNumber = '320758009053';
 
     // Initialize the Backend Services SDK
     var el = new Everlive({
