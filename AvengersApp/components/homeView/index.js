@@ -68,16 +68,24 @@ app.homeView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item),
-                    test;
+                    test1 = "Days left to expire:",
+                	test2;
                // if (!itemModel.usrl_product) {
                     //itemModel.usrl_product = String.fromCharCode(160);
                // }
-                test = itemModel.usrl_product;
+                var date1 = new Date();
+                var date2 = itemModel.usrl_deactive_date;
+               	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+                test2 = daysLeft;
                 homeViewModel.set('currentItem', itemModel);
-                homeViewModel.set('name', test)
+                homeViewModel.set('name', test1);
+                homeViewModel.set('name2', test2)
             },
             currentItem: null,
-            name: null
+            name: null,
+            name2: null,
+            color: "red"
         });
 
     parent.set('homeViewModel', homeViewModel);
