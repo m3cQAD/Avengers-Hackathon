@@ -1,17 +1,17 @@
 'use strict';
 
 app.homeView = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_homeView
 // END_CUSTOM_CODE_homeView
-(function(parent) {
+(function (parent) {
     var dataProvider = app.data.avengersAppBackend,
-        flattenLocationProperties = function(dataItem) {
+        flattenLocationProperties = function (dataItem) {
             var propName, propValue,
-                isLocation = function(value) {
+                isLocation = function (value) {
                     return propValue && typeof propValue === 'object' &&
                         propValue.longitude && propValue.latitude;
                 };
@@ -35,7 +35,7 @@ app.homeView = kendo.observable({
                 dataProvider: dataProvider
             },
 
-            change: function(e) {
+            change: function (e) {
                 var data = this.data();
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
@@ -61,22 +61,28 @@ app.homeView = kendo.observable({
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         homeViewModel = kendo.observable({
             dataSource: dataSource,
-            itemClick: function(e) {
+            itemClick: function (e) {
                 app.mobileApp.navigate('#components/homeView/details.html?uid=' + e.dataItem.uid);
             },
-            detailsShow: function(e) {
+            detailsShow: function (e) {
                 var item = e.view.params.uid,
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item),
                     test1 = "Days left to expire:",
-                	test2;
-               // if (!itemModel.usrl_product) {
-                    //itemModel.usrl_product = String.fromCharCode(160);
-               // }
-                var date1 = new Date();
-                var date2 = itemModel.usrl_deactive_date;
-               	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-                var daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+                    test2;
+                // if (!itemModel.usrl_product) {
+                //itemModel.usrl_product = String.fromCharCode(160);
+                // }
+                var daysLeft = 0;
+                if (itemModel.usrl_deactive_date) {
+                    var date1 = new Date();
+                    var date2 = itemModel.usrl_deactive_date;
+                    var timeDiff = date2.getTime() - date1.getTime();
+                    daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                    if (daysLeft < 0) {
+                        daysLeft = 0;
+                    }
+                }
                 test2 = daysLeft;
                 homeViewModel.set('currentItem', itemModel);
                 homeViewModel.set('name', test1);

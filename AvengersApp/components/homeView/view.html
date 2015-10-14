@@ -9,7 +9,7 @@
     <script type="text/x-kendo-template" id="homeViewModelTemplate">
     <!-- Select color for item depending on days left for license -->
     	# var color = 'no-active-item';
-        if(data['usrl_active']){
+        if(data['usrl_deactive_date']){
         	var date1 = new Date();
         	var date2 = data['usrl_deactive_date'];
         	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
