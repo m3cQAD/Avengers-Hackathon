@@ -73,7 +73,8 @@ app.homeView = kendo.observable({
                 // if (!itemModel.usrl_product) {
                 //itemModel.usrl_product = String.fromCharCode(160);
                 // }
-                var daysLeft = 0;
+                var daysLeft;
+                var test3 = "";
                 if (itemModel.usrl_deactive_date) {
                     var date1 = new Date();
                     var date2 = itemModel.usrl_deactive_date;
@@ -82,10 +83,15 @@ app.homeView = kendo.observable({
                     if (daysLeft < 0) {
                         daysLeft = 0;
                     }
+                    
+                    homeViewModel.set('name', test1);
+                }else{
+                    daysLeft = ""
+                    test3 = "Not purchased"
+                    homeViewModel.set('name', test3);
                 }
                 test2 = daysLeft;
                 homeViewModel.set('currentItem', itemModel);
-                homeViewModel.set('name', test1);
                 homeViewModel.set('name2', test2)
             },
             currentItem: null,
