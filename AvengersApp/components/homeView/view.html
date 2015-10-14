@@ -7,9 +7,16 @@
     <!-- START_CUSTOM_CODE_homeViewModel -->
     <!-- END_CUSTOM_CODE_homeViewModel -->
     <script type="text/x-kendo-template" id="homeViewModelTemplate">
+    	# if(data['usrl_active']){ #
         <div class="image-with-text">
             <h3>#: data['usrl_product'] #</h3>
 
         </div>
+   		# }else{ #
+        <div class="no-active-product">
+            <h3>#: data['usrl_product'] #</h3>
+
+        </div>
+        # } #
     </script>
 </div>

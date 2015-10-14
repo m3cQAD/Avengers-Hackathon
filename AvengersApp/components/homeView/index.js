@@ -69,7 +69,7 @@ app.homeView = kendo.observable({
                     dataSource = homeViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
                 if (!itemModel.usrl_active) {
-                    itemModel.usrl_active = String.fromCharCode(160);
+                 //   itemModel.usrl_active = String.fromCharCode(160);
                 }
                 homeViewModel.set('currentItem', itemModel);
             },

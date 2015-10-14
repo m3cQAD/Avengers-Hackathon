@@ -3,6 +3,10 @@
     margin-right: 15px;
 }
 
+#kendoUiMobileApp .no-active-product {
+	background: red;
+}
+
 #kendoUiMobileApp .block {
     display: block;
     margin: 1em;
