@@ -109,13 +109,6 @@ app.authenticationView = kendo.observable({
             }
         });
     
-    provider.authentication.login(username, password, function (data) {
-        var accessToken = data.result.access_token;
-        alert("Successfully logged the user in! Received access token: " + accessToken);
-    }, function (err) {
-        alert("Unfortunately an error occurred: " + err.message);
-    });
-    
     parent.set('authenticationViewModel', authenticationViewModel);
     parent.set('afterShow', function () {
         provider.Users.currentUser().then(successHandler, init);
