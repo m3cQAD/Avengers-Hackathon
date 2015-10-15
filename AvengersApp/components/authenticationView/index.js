@@ -31,6 +31,19 @@ app.authenticationView = kendo.observable({
         },
         successHandler = function (data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
+           
+            var pushSettings = {
+                android: {
+                    senderID: '320758009053'
+                },
+                notificationCallbackAndroid: onAndroidPushReceived,
+                customParameters: {
+                    Age: 21
+                }
+            };
+
+            provider.push.register(pushSettings)
+                .then();
 
             if (data && data.result) {
                 app.user = data.result;
