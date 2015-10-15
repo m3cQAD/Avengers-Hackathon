@@ -47,14 +47,6 @@
       ],
       "title": "Authentication",
       "addToNavigation": false
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "testPush",
-      "components": [],
-      "title": "Test push notification",
-      "addToNavigation": true,
-      "icon": "info"
     }
   ],
   "dataProviders": [
