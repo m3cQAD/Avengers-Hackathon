@@ -56,7 +56,8 @@ app.authenticationView = kendo.observable({
             }
         },
         onAndroidPushReceived = function (args) {
-            alert('Android notification received: ' + JSON.stringify(args));
+            
+            alert(args.payload.message);
         },
         authenticationViewModel = kendo.observable({
             displayName: '',
