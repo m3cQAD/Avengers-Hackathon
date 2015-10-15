@@ -31,7 +31,7 @@ app.authenticationView = kendo.observable({
         },
         successHandler = function (data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
-           
+
             var pushSettings = {
                 android: {
                     senderID: '320758009053'
@@ -56,7 +56,7 @@ app.authenticationView = kendo.observable({
             }
         },
         onAndroidPushReceived = function (args) {
-            
+
             alert(args.payload.message);
         },
         authenticationViewModel = kendo.observable({
@@ -108,7 +108,14 @@ app.authenticationView = kendo.observable({
                 init();
             }
         });
-
+    
+    provider.authentication.login(username, password, function (data) {
+        var accessToken = data.result.access_token;
+        alert("Successfully logged the user in! Received access token: " + accessToken);
+    }, function (err) {
+        alert("Unfortunately an error occurred: " + err.message);
+    });
+    
     parent.set('authenticationViewModel', authenticationViewModel);
     parent.set('afterShow', function () {
         provider.Users.currentUser().then(successHandler, init);
