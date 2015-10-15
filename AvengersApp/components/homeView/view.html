@@ -12,7 +12,7 @@
         if(data['usrl_deactive_date']){
         	var date1 = new Date();
         	var date2 = data['usrl_deactive_date'];
-        	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        	var timeDiff = date2.getTime() - date1.getTime();
 			var daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
             if(daysLeft >= 30){
             	color = 'greenItem';
